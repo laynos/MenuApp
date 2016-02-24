@@ -1,3 +1,7 @@
-menu_homepage:
+menu_home:
     path:     /
     defaults: { _controller: MenuBundle:Default:index }
+
+menu_homepage:
+    path:     /index
+    defaults: { _controller: MenuBundle:Default:menu }
