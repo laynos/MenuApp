@@ -1,0 +1,7 @@
+menu:
+    resource: "@MenuBundle/Resources/config/routing.yml"
+    prefix:   /menu
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
