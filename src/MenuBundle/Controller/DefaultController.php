@@ -16,36 +16,61 @@ class DefaultController extends Controller
     }
 	
 	public function menuAction(){
-		$data  = file_get_contents("https://graph.facebook.com/515562508539711/feed?access_token=CAACEdEose0cBAIwZCQ5zFGR8shEmZBEEPdxU6nIvoNNqrAzpqgACFJcEBZCzTUhnpmDkGtGnfQ7GsRy3qfglRj57yXHBW2m3ygZBKzoCPI7FuSAoRUERugmNOcxZB5M9AQViB6LSs2KrrzaduAZCnihL4m5ZCaHqmRyapHmYtZBKI2etRF9ksfKSXcKLhYRVyfWfbnBSGzTeixAjMVHl7Dze");
-		$data = json_decode($data);
-		var_dump($data);
+		/*GET /me/accounts HTTP/1.1
+		Host: graph.facebook.com
+		*/
+		/*$access = file_get_contents("graph.facebook.com/me");
+		var_dump(access);
+		*/
+		$data1  = file_get_contents("https://graph.facebook.com/515562508539711/feed?access_token=CAACEdEose0cBAAB3h1fFpgRnXNPEZBSWW5EeNKc1oKitJFZAqjI0etLZBUc1LPZBhZBJyu8BBxkQy0zegq3Yrk3bQNSSZAjtcK9kmURPYjib8998h448KArvcxYdtWKH0ZAJwOAoqnGZCGDqM37bqFyNjxbCGZAXnnTvnQtZB5wu4t0Ub5LTnkvAjA6snEz41QxQgrBEhWSbfb09znvoXMxFNH");
+		$data1 = json_decode($data1);
+		//var_dump($data1);
 		$flag = 0;
 		$i = 0;
-		$array;
+		$ilot;
 		
-		/*while($flag < 3){
-			if(isset($data->{'data'}[$i]->{'message'})){
-				$message = $data->{'data'}[$i]->{'message'};
+		while($flag < 3){
+			if(isset($data1->{'data'}[$i]->{'message'})){
+				$message = $data1->{'data'}[$i]->{'message'};
 				
 				//if(($msg = strstr($message, 'Menu', false)) !== null ){
-				if(strpos($message,'Menu')){
-					echo $flag;
-					$array[$flag] = $msg;
-					echo $array[$flag];
+				if(strpos($message,"Menu") !== false){
+				//	echo $flag;
+					$ilot[$flag] = $message;
+				//	echo $ilot[$flag];
+				//	echo "\n";
 					$flag++;
-					echo $flag;
+				//	echo $flag;
 				}
 			}
 			$i++;
-		}*/
-	
-		/*for ($i = 0; $i <= 100; $i++) {
-			$message = $data->{'data'}[$i]->{'message'};
-			echo $message;
-		}*/
-		//return $this->render('MenuBundle:Site:menu.html.twig');
+		}
+		$data2 = file_get_contents("https://graph.facebook.com/649823778452363/feed?access_token=CAACEdEose0cBAAB3h1fFpgRnXNPEZBSWW5EeNKc1oKitJFZAqjI0etLZBUc1LPZBhZBJyu8BBxkQy0zegq3Yrk3bQNSSZAjtcK9kmURPYjib8998h448KArvcxYdtWKH0ZAJwOAoqnGZCGDqM37bqFyNjxbCGZAXnnTvnQtZB5wu4t0Ub5LTnkvAjA6snEz41QxQgrBEhWSbfb09znvoXMxFNH");
+		$data2 = json_decode($data2);
+		$i = 0;
+		$flag = 0;
+		$regal;
+		//var_dump($data2);
+		while($flag < 3){
+			if(isset($data2->{'data'}[$i]->{'message'})){
+				$message = $data2->{'data'}[$i]->{'message'};
+				
+				//if(($msg = strstr($message, 'Menu', false)) !== null ){
+				if(strpos($message,"Menu du jour") !== false  ||  strpos($message,"Repas du jour") !== false){
+					//echo $flag;
+					$regal[$flag] = $message;
+					//echo $regal[$flag];
+				//	echo "\n";
+					$flag++;
+					//echo $flag;
+				}
+			}
+			$i++;
+		}
+		
 		 return $this->render('MenuBundle:Site:menu.html.twig', array(
-      'data' => $data
+      'ilot' => $ilot,
+	  'regal' => $regal
     ));
 	}
 }

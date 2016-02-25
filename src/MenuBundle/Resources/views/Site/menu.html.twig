@@ -6,6 +6,18 @@
 {% endblock %}
 
 {% block body %}
-Ici sera le menu
-
+Ilot
+{% for menu in ilot %}
+    <li>
+       {{ menu }} 
+    </li>
+  {% endfor %}
+  
+  Régal
+  {% for menu in regal %}
+    <li>
+       {{ menu }} 
+    </li>
+  {% endfor %}
+  
 {% endblock %}
