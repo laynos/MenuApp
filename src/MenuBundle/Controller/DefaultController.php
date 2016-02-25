@@ -3,9 +3,6 @@
 namespace MenuBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Facebook\FacebookRequest;
-use Facebook\Facebook;
-use Facebook\FacebookApp;
 
 class DefaultController extends Controller
 {
@@ -16,13 +13,8 @@ class DefaultController extends Controller
     }
 	
 	public function menuAction(){
-		/*GET /me/accounts HTTP/1.1
-		Host: graph.facebook.com
-		*/
-		/*$access = file_get_contents("graph.facebook.com/me");
-		var_dump(access);
-		*/
-		$data1  = file_get_contents("https://graph.facebook.com/515562508539711/feed?access_token=CAACEdEose0cBAAB3h1fFpgRnXNPEZBSWW5EeNKc1oKitJFZAqjI0etLZBUc1LPZBhZBJyu8BBxkQy0zegq3Yrk3bQNSSZAjtcK9kmURPYjib8998h448KArvcxYdtWKH0ZAJwOAoqnGZCGDqM37bqFyNjxbCGZAXnnTvnQtZB5wu4t0Ub5LTnkvAjA6snEz41QxQgrBEhWSbfb09znvoXMxFNH");
+		$accessToken = 'CAACEdEose0cBAPYKcGcissBUa2UgEWOdhG0Vfp30BvMldEeYIXEKvtEaH7rLG456FMe1Ey26nnBwrpNVuOhnFCeygq6GVMGXEb9gj4vvMAKyH98TeRTYolmCSjpNXiKM9yLY17ZARynpTJAqVuZAMkU6SjdTClzBGGRdY3OH3qVYZBfGGG6t6ZCprlJ6rd9RpkI6x4ZC5AUqQckbEWEg9';
+		$data1  = file_get_contents("https://graph.facebook.com/515562508539711/posts?access_token=$accessToken");
 		$data1 = json_decode($data1);
 		//var_dump($data1);
 		$flag = 0;
@@ -45,7 +37,7 @@ class DefaultController extends Controller
 			}
 			$i++;
 		}
-		$data2 = file_get_contents("https://graph.facebook.com/649823778452363/feed?access_token=CAACEdEose0cBAAB3h1fFpgRnXNPEZBSWW5EeNKc1oKitJFZAqjI0etLZBUc1LPZBhZBJyu8BBxkQy0zegq3Yrk3bQNSSZAjtcK9kmURPYjib8998h448KArvcxYdtWKH0ZAJwOAoqnGZCGDqM37bqFyNjxbCGZAXnnTvnQtZB5wu4t0Ub5LTnkvAjA6snEz41QxQgrBEhWSbfb09znvoXMxFNH");
+		$data2 = file_get_contents("https://graph.facebook.com/649823778452363/posts?access_token=$accessToken");
 		$data2 = json_decode($data2);
 		$i = 0;
 		$flag = 0;

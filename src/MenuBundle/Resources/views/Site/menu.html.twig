@@ -2,22 +2,75 @@
 
 
 {% block title %}
-  {{ parent() }}
+  Accueil - {{ parent() }}
 {% endblock %}
 
 {% block body %}
-Ilot
-{% for menu in ilot %}
-    <li>
-       {{ menu }} 
-    </li>
-  {% endfor %}
+	{% set date =  'now'|localizeddate('none', 'none', 'fr', null, 'd MMMM') %}
+	{% block body_menuI %}
+		Ilot
+		{% for menu in ilot %}
+			<li>
+				{{menu |nl2br }}
+				{% if date in (menu|lower) %}
+					{% if "rougail saucisse" in (menu|lower) %}
+						<script type="text/javascript">    
+							var rougailIlot = 1;
+							//alert("rougailIlot");
+						</script>
+					{% endif %}
+					{% if "poulet à  la crème" in (menu|lower) %}
+						<script type="text/javascript">    
+							var pouletIlot = 1;
+							//alert("pouletIlot");
+						</script>
+					{% endif %}
+				{% endif %}
+			</li>
+		{% endfor %}
+	{% endblock %}
   
-  Régal
-  {% for menu in regal %}
-    <li>
-       {{ menu }} 
-    </li>
-  {% endfor %}
-  
+	{% block body_menuR  %}
+		Régal
+		{% for menu in regal %}
+			<li>
+				{{ menu |nl2br }}
+				{% if date in (menu|lower) %}
+					{% if "rougail saucisse" in (menu|lower) %}
+						<script type="text/javascript">    
+							var rougailRegal = 1;
+							//alert("rougailRegal");
+						</script>
+					{% endif %}
+					{% if "poulet à  la crème" in (menu|lower) %}
+						<script type="text/javascript">    
+							var pouletRegal = 1;
+							//alert("pouletRegal");
+						</script>
+					{% endif %}
+				{% endif %}
+			</li>
+		{% endfor %}
+	{% endblock %}
+
+
+	
+{% endblock %}
+
+{% block javascripts %}
+	<script type="text/javascript">
+		if(typeof rougailIlot != 'undefined'){
+			alert("Vous pouvez déguster aujourd'hui un bon rougail saucisse chez L'Ilot Régal");
+		}
+		if(typeof rougailRegal != 'undefined'){
+			console.log(rougailRegal);
+			alert("Vous pouvez déguster aujourd'hui un bon rougail saucisse chez Régal du circuit");
+		}
+		if(typeof pouletIlot != 'undefined'){
+			alert("Vous pouvez déguster aujourd'hui un délicieux poulet à la crème chez L'Ilot Régal");
+		}
+		if(typeof pouletRegal != 'undefined'){
+			alert("Vous pouvez déguster aujourd'hui un délicieux poulet à la crème chez Régal du circuit");
+		}
+    </script>
 {% endblock %}
