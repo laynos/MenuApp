@@ -15,14 +15,14 @@
 		
 		<div id="menu" class="col-md-6">
 			{% block body_menuI %}
-				<h3>Ilot du régal </h3>
+				<h3 class="well well-lg">Ilot du régal </h3>
 				{% for menu in ilot %}
 			
 				
 					{% if date in (menu|lower) %}
-						
+						<div class="well">
 							{{menu |nl2br }}
-						
+						</div>
 						{% if "rougail saucisse" in (menu|lower) %}
 							<script type="text/javascript">    
 								var rougailIlot = 1;
@@ -42,14 +42,14 @@
 		</div>
 		<div id="menu" class="col-md-6">
 			{% block body_menuR  %}
-				<h3>Régal du circuit</h3>
+				<h3 class="well well-lg">Régal du circuit</h3>
 				{% for menu in regal %}
 			
 				
 					{% if date in (menu|lower) %}
-						
+						<div class="well">
 							{{ menu |nl2br }}
-						
+						</div
 						{% if "rougail saucisse" in (menu|lower) %}
 							<script type="text/javascript">    
 								var rougailRegal = 1;
@@ -73,6 +73,13 @@
 		</div>	
 	</section>
 	
+{% endblock %}
+	
+
+{% block footer %}
+<nav class="navbar navbar-primary navbar-fixed-bottom bg-info">
+
+</nav>
 {% endblock %}
 
 {% block javascripts %}

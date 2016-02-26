@@ -10,8 +10,9 @@
 		{% block body_menuI %}
 			<h3 >Ilot du régal</h3>
 			{% for menu in ilot %}
-			
-				{{menu |nl2br }}
+				<div class="well">
+					{{menu |nl2br }}
+				</div>
 				<br/>
 				<br/>
 			{% endfor %}
@@ -21,9 +22,9 @@
   
 {% block footer %}
 	<address>
-		2 ruelle sansevieras st clotilde, 97490 Saint-Denis (La Réunion)
+		2 Ruelle sansevieras Saint-Clotilde, 97490 Saint-Denis (La Réunion)
 			<br/>
-		lun-ven: 06:00 - 15:00
+		Du lundi au vendredi : de 6h à 15h
 			<br/>
 		Téléphone +262 692 58 10 10
 	</address>

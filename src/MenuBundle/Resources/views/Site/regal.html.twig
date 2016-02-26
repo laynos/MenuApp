@@ -10,8 +10,9 @@
 		{% block body_menuR  %}
 			<h3>Régal du circuit</h3>
 			{% for menu in regal %}
-			
-				{{ menu |nl2br }}
+				<div class="well">
+					{{ menu |nl2br }}
+				</div>
 				<br/>
 				<br/>
 			{% endfor %}
@@ -22,7 +23,7 @@
 
 {% block footer %}
 	<address>
-		91 rue du karting la Jamaïque, 97490 Saint-Denis (La Réunion)
+		91 Rue du karting la Jamaïque, 97490 Saint-Denis (La Réunion)
 			<br/>
 		Téléphone +262 692 85 01 50
 	</address>

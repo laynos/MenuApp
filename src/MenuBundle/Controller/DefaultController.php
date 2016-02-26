@@ -13,7 +13,7 @@ class DefaultController extends Controller
     }
 	*/
 	public function ilotAction(){
-		$accessToken = 'CAACEdEose0cBAHEI8OlOeIUEtDhmNFrNrBMFasxd0ZAj6LTo8e4NZBbJGHZCOHX5HgItxhWhZBB2rc0bV1GJZCJOyi0SLDvvE3mBDKUHtmNdOPmSKCp9VcZAMxP9E1rZBkUHPeYuXPypvpvhTeti0DBsJ4ZBQjdXprsGVcEf6mL2LCOlLwm9wbcJ6dfpZAqM7KovZAPx4V4p3c3aZCIDiSWJwpg';
+		$accessToken = 'CAACEdEose0cBACa1XUBbImeZBl8LpHFOCzUwg0ZBx5ZAns7oT4urWIhyObHzJWJG1nMewPTu66cCkN4RRgB2FLYRNmkTKnGz3LPaMcZC76DDgUbXv6pmg0oHZA31ayFZAwEAJMP1MoLOaMeJm5hHZCIH2ixITwEgq1R8Wbd41ZB802B57K83qVXkaUiMwbO2gOneZBPx95PiM5wZAuyTg6JLyT';
 		$data1  = file_get_contents("https://graph.facebook.com/515562508539711/posts?access_token=$accessToken");
 		$data1 = json_decode($data1);
 		$flag = 0;
@@ -42,7 +42,7 @@ class DefaultController extends Controller
 	}
 	
 		public function regalAction(){
-		$accessToken = 'CAACEdEose0cBAHEI8OlOeIUEtDhmNFrNrBMFasxd0ZAj6LTo8e4NZBbJGHZCOHX5HgItxhWhZBB2rc0bV1GJZCJOyi0SLDvvE3mBDKUHtmNdOPmSKCp9VcZAMxP9E1rZBkUHPeYuXPypvpvhTeti0DBsJ4ZBQjdXprsGVcEf6mL2LCOlLwm9wbcJ6dfpZAqM7KovZAPx4V4p3c3aZCIDiSWJwpg';
+		$accessToken = 'CAACEdEose0cBACa1XUBbImeZBl8LpHFOCzUwg0ZBx5ZAns7oT4urWIhyObHzJWJG1nMewPTu66cCkN4RRgB2FLYRNmkTKnGz3LPaMcZC76DDgUbXv6pmg0oHZA31ayFZAwEAJMP1MoLOaMeJm5hHZCIH2ixITwEgq1R8Wbd41ZB802B57K83qVXkaUiMwbO2gOneZBPx95PiM5wZAuyTg6JLyT';
 		$data2 = file_get_contents("https://graph.facebook.com/649823778452363/posts?access_token=$accessToken");
 		$data2 = json_decode($data2);
 		$i = 0;
@@ -72,7 +72,7 @@ class DefaultController extends Controller
 	}
 	
 	public function menuAction(){
-		$accessToken = 'CAACEdEose0cBAHEI8OlOeIUEtDhmNFrNrBMFasxd0ZAj6LTo8e4NZBbJGHZCOHX5HgItxhWhZBB2rc0bV1GJZCJOyi0SLDvvE3mBDKUHtmNdOPmSKCp9VcZAMxP9E1rZBkUHPeYuXPypvpvhTeti0DBsJ4ZBQjdXprsGVcEf6mL2LCOlLwm9wbcJ6dfpZAqM7KovZAPx4V4p3c3aZCIDiSWJwpg';
+		$accessToken = 'CAACEdEose0cBACa1XUBbImeZBl8LpHFOCzUwg0ZBx5ZAns7oT4urWIhyObHzJWJG1nMewPTu66cCkN4RRgB2FLYRNmkTKnGz3LPaMcZC76DDgUbXv6pmg0oHZA31ayFZAwEAJMP1MoLOaMeJm5hHZCIH2ixITwEgq1R8Wbd41ZB802B57K83qVXkaUiMwbO2gOneZBPx95PiM5wZAuyTg6JLyT';
 		$data1  = file_get_contents("https://graph.facebook.com/515562508539711/posts?access_token=$accessToken");
 		$data1 = json_decode($data1);
 		//var_dump($data1);
