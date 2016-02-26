@@ -1,0 +1,30 @@
+{% extends "MenuBundle::layout.html.twig" %}
+
+
+{% block title %}
+    Ilot du régal  - {{ parent() }}
+{% endblock %}
+
+{% block body_site %}
+	<div class="text-center">
+		{% block body_menuI %}
+			<h3 >Ilot du régal</h3>
+			{% for menu in ilot %}
+			
+				{{menu |nl2br }}
+				<br/>
+				<br/>
+			{% endfor %}
+		{% endblock %}
+	</div>
+{% endblock %}
+  
+{% block footer %}
+	<address>
+		2 ruelle sansevieras st clotilde, 97490 Saint-Denis (La Réunion)
+			<br/>
+		lun-ven: 06:00 - 15:00
+			<br/>
+		Téléphone +262 692 58 10 10
+	</address>
+{% endblock %}

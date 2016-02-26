@@ -8,13 +8,48 @@
 
   
 {% block body %}
+<nav class="navbar navbar-primary bg-info" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex2-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="{{ path('menu_homepage') }}">Menus du jour</a>
+		</div>
+		<div class="collapse navbar-collapse navbar-ex2-collapse">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="{{ path('menu_homepage') }}">Accueil</a></li>
+				<li class="active"><a href="{{ path('menu_ilot') }}">Ilot du régal</a></li>
+				<li class="active"><a href="{{ path('menu_regal') }}">Régal du circuit</a></li>
+
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+			</ul>
+		</div>
+	</div>
+</nav>
 
 
-{% block body_menuI %}
+		{% block body_site %}
+	
+		
+			{% block body_menuI %}
 
-  {% endblock %}
-  
-  {% block body_menuR %}
+			{% endblock %}
+		
+			
+			{% block body_menuR %}
 
-  {% endblock %}
+			{% endblock %}
+
+		{% endblock %}
+	
+	
+	<footer class="container-fluid text-center bg-info text-primary">
+		{% block footer %}
+		{% endblock %}
+	</footer>
 {% endblock %}

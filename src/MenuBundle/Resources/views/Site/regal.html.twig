@@ -1,0 +1,29 @@
+{% extends "MenuBundle::layout.html.twig" %}
+
+
+{% block title %}
+	Régal du circuit - {{ parent() }}
+{% endblock %}
+
+{% block body_site %}
+	<div class="text-center">
+		{% block body_menuR  %}
+			<h3>Régal du circuit</h3>
+			{% for menu in regal %}
+			
+				{{ menu |nl2br }}
+				<br/>
+				<br/>
+			{% endfor %}
+		{% endblock %}
+	</div>	
+
+{% endblock %}
+
+{% block footer %}
+	<address>
+		91 rue du karting la Jamaïque, 97490 Saint-Denis (La Réunion)
+			<br/>
+		Téléphone +262 692 85 01 50
+	</address>
+{% endblock %}

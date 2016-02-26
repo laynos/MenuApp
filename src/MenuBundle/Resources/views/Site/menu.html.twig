@@ -5,55 +5,73 @@
   Accueil - {{ parent() }}
 {% endblock %}
 
-{% block body %}
+{% block body_site %}
+
 	{% set date =  'now'|localizeddate('none', 'none', 'fr', null, 'd MMMM') %}
-	{% block body_menuI %}
-		Ilot
-		{% for menu in ilot %}
-			<li>
-				{{menu |nl2br }}
-				{% if date in (menu|lower) %}
-					{% if "rougail saucisse" in (menu|lower) %}
-						<script type="text/javascript">    
-							var rougailIlot = 1;
-							//alert("rougailIlot");
-						</script>
+	
+	<section class="container-fluid" id="section1">
+			
+		<div class="row text-justify">
+		
+		<div id="menu" class="col-md-6">
+			{% block body_menuI %}
+				<h3>Ilot du régal </h3>
+				{% for menu in ilot %}
+			
+				
+					{% if date in (menu|lower) %}
+						
+							{{menu |nl2br }}
+						
+						{% if "rougail saucisse" in (menu|lower) %}
+							<script type="text/javascript">    
+								var rougailIlot = 1;
+								//alert("rougailIlot");
+							</script>
+						{% endif %}
+						{% if "poulet à  la crème" in (menu|lower) %}
+							<script type="text/javascript">    
+								var pouletIlot = 1;
+								//alert("pouletIlot");
+							</script>
+						{% endif %}
 					{% endif %}
-					{% if "poulet à  la crème" in (menu|lower) %}
-						<script type="text/javascript">    
-							var pouletIlot = 1;
-							//alert("pouletIlot");
-						</script>
+			
+				{% endfor %}
+			{% endblock %}
+		</div>
+		<div id="menu" class="col-md-6">
+			{% block body_menuR  %}
+				<h3>Régal du circuit</h3>
+				{% for menu in regal %}
+			
+				
+					{% if date in (menu|lower) %}
+						
+							{{ menu |nl2br }}
+						
+						{% if "rougail saucisse" in (menu|lower) %}
+							<script type="text/javascript">    
+								var rougailRegal = 1;
+								//alert("rougailRegal");
+							</script>
+						{% endif %}
+						{% if "poulet à  la crème" in (menu|lower) %}
+							<script type="text/javascript">    
+								var pouletRegal = 1;
+								//alert("pouletRegal");
+							</script>
+						{% endif %}
 					{% endif %}
-				{% endif %}
-			</li>
-		{% endfor %}
-	{% endblock %}
-  
-	{% block body_menuR  %}
-		Régal
-		{% for menu in regal %}
-			<li>
-				{{ menu |nl2br }}
-				{% if date in (menu|lower) %}
-					{% if "rougail saucisse" in (menu|lower) %}
-						<script type="text/javascript">    
-							var rougailRegal = 1;
-							//alert("rougailRegal");
-						</script>
-					{% endif %}
-					{% if "poulet à  la crème" in (menu|lower) %}
-						<script type="text/javascript">    
-							var pouletRegal = 1;
-							//alert("pouletRegal");
-						</script>
-					{% endif %}
-				{% endif %}
-			</li>
-		{% endfor %}
-	{% endblock %}
+				
+			
+				{% endfor %}
+			{% endblock %}
 
-
+					
+		</div>
+		</div>	
+	</section>
 	
 {% endblock %}
 

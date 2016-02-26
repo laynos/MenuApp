@@ -1,7 +1,11 @@
-menu_home:
-    path:     /
-    defaults: { _controller: MenuBundle:Default:index }
-
 menu_homepage:
     path:     /index
     defaults: { _controller: MenuBundle:Default:menu }
+
+menu_regal:
+    path:     /regal
+    defaults: { _controller: MenuBundle:Default:regal }
+
+menu_ilot:
+    path:     /ilot
+    defaults: { _controller: MenuBundle:Default:ilot }
